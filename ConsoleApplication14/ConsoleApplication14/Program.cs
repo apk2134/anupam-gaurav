@@ -20,6 +20,7 @@ namespace ConsoleApplication14
         static void Main(string[] args)
         {
             Console.WriteLine("tu gandu");
+            Console.WriteLine("");
             
             List<HoldContenstAndMark> list = new List<HoldContenstAndMark>();
 
