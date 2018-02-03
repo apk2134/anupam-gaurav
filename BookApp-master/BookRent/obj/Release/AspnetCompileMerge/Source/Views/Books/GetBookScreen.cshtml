@@ -1,0 +1,127 @@
+﻿
+
+
+@model BookRent.Models.BookViewModel
+
+@using BookRentBL
+@{
+    ViewBag.Title = "GetBookScreen";
+    //Layout = "_Layout.cshtml";
+    AuthorManager manager = new AuthorManager();
+    CategoryManager cmanager = new CategoryManager();
+}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
+    <div id="AdminScreen" style="display:none;"></div>
+    <div id="tabs">
+       
+        <div style="margin:10px -4px 0px -7px;">
+         <div class="ui-tabs-pakknel ui-corner-bottom ui-widget-content" style="height:561px;">
+
+            <div id="wrapper" style="font-family:tahoma,arial;margin-top:18px;font-size:80%;">
+
+           <div id="content" style="width:100%;margin:0px auto;">
+               
+              
+    <div id="boundary" class="headervisible">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h2>Books</h2>
+                <hr />
+                
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.BookId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-5 col-xs-10 col-sm-10">
+                        @Html.EditorFor(model => model.BookId, new { htmlAttributes = new { @class = ".controls" } })
+                        @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.BookName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-5 col-xs-10 col-sm-10">
+                        @Html.EditorFor(model => model.BookName, new { htmlAttributes = new { @class = ".controls" } })
+                        @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Publisher, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-5 col-xs-10 col-sm-10">
+                        @Html.EditorFor(model => model.Publisher, new { htmlAttributes = new { @class = ".controls" } })
+                        @Html.ValidationMessageFor(model => model.Publisher, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Availability, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-5 col-xs-10 col-sm-10">
+                        @Html.EditorFor(model => model.Availability, new { htmlAttributes = new { @class = ".controls" } })
+                        @Html.ValidationMessageFor(model => model.Availability, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.AuthorId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="wrapper">
+                        <div class="col-md-5 col-xs-10 col-sm-10">
+                            @Html.DropDownListFor(model => model.AuthorId, new SelectList(manager.GetAllAuthors(), "AuthorId", "AuthorName"), new { htmlAttributes = new { @class = ".controls" } })
+                            @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="button">
+                                <button type="button" class="btn btn-primary" onclick="AddAuthor()">Add Author</button>
+                            </div>
+                    </div>
+                  
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="wrapper">
+                        <div class="col-md-5 col-xs-10 col-sm-10">
+                            @Html.DropDownListFor(model => model.CategoryId, new SelectList(cmanager.GetAllCategories(), "CategoryId", "CategoryName"), new { htmlAttributes = new { @class = ".controls" } })
+                            @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="button">
+                            <button type="button" class="btn btn-primary" onclick="AddCategory()">Add Category</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="col-md-10 controls">
+                        <input type="submit" value="Insert" class="btn btn-primary glyphicon glyphicon-floppy-disk"  onclick="javascript: Js_SaveLocationConfiguration(this);" />
+                        @*<input type="submit" value="Update/Delete" class="btn btn-primary glyphicon glyphicon-floppy-disk" onclick="javascript: Js_SaveLocationConfiguration(this);" />*@
+                       
+                    </div>
+                </div>
+            </div>
+        
+              
+
+        }
+        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function Js_SaveLocationConfiguration(value)
+    {
+
+    }
+
+
+</script>
+
+
+ <script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/Admin.js"></script>

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="~/js/Admin.js"></script>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-lg-11 col-md-5 col-sm-8 col-xs-12 bhoechie-tab-container " style="top:-31px">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bhoechie-tab-menu">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active text-center" onclick="getBookMenu()">
+                        <h2 class="glyphicon glyphicon-book"></h2><br />Books
+                    </a>
+                    <a href="#" class="list-group-item text-center" onclick="getuserpage()">
+                        <h2 class="glyphicon glyphicon-user"></h2><br />Users
+                    </a>
+                    <a href="#" class="list-group-item text-center" onclick="getcoustomersubscription()">
+                        <h2 class="glyphicon glyphicon-tags"></h2><br /> Subscriptions
+                    </a>
+                    <a href="#" class="list-group-item text-center" onclick="Js_BuildingConfigruation()">
+                        <h2 class="glyphicon glyphicon-shopping-cart"></h2><br />Orders
+                    </a>
+
+                </div>
+            </div>
+            <div id="AdminConfig">
+               
+            </div>
+
+   
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+            //e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+    });
+
+</script>

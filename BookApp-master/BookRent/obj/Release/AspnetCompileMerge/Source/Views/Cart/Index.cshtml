@@ -1,0 +1,58 @@
+﻿@model BookRent.Models.CartViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+<h2>Cart</h2>
+<div class="wrapper">
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
+        <div class="control-group" >
+            <div class="row">
+                
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Publisher)
+                                </th>
+                                <th>
+                                </th>
+                                </tr>
+                                @*FOr Each item in list*@
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.BookId)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(model => model.BookName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(model => model.Publisher)
+                                </td>
+                                <td>
+                                    <input type="submit" value="Remove" class="btn btn-default" />
+                                </td>
+
+
+                            </tr>
+                    </table>
+                 
+                
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style="float:right">
+            <input type="submit" value="CheckOut"  class="btn btn-default"  />
+        </div>
+    </div>
+</div>

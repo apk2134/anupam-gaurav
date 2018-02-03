@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BookEntity.CoustomerDetails>
+
+@{
+    Layout = null;
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>*@
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
+    <div class="control-group" id="AdminScreen">
+        <div class="col-md- controls">
+            <table class="table">
+                <tr>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Address.House)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.email)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Address.House)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @*<a href="#">Edit</a>*@
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CoustomerId }) |
+                            @*@Html.ActionLink("Details", "Details", new { id=item.CoustomerId }) |*@
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CoustomerId })
+                           
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    </div>
+    <script>
+
+
+    </script>

@@ -1,0 +1,61 @@
+﻿@using System.Web.Mvc
+@model  IEnumerable<BookRent.Models.BookViewModel>
+@using BookRent.Models
+
+
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Availability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+        </tr>
+
+
+        @{
+            if (Model != null)
+            {
+
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="display:none">
+                            @Html.HiddenFor(m => item.BookId)
+                        </td>
+
+                        <td>
+                            @Html.TextBoxFor(m => item.BookName, htmlAttributes: new { @class = "form-control" })
+                        <td>
+                            @Html.TextBoxFor(m => item.Publisher, htmlAttributes: new { @class = "form-control" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => item.Availability, htmlAttributes: new { @class = "form-control" })
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => item.Author, htmlAttributes: new { @class = "form-control" })
+
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => item.Category, htmlAttributes: new { @class = "form-control" })
+                        </td>
+                    </tr>
+
+                }
+            }
+        }
+    </table>
+
+</div>

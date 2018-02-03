@@ -1,0 +1,12 @@
+F:\latest\BookApp-master\BookEntity\bin\Release\RentBook.mdf
+F:\latest\BookApp-master\BookEntity\bin\Release\RentBook_log.ldf
+F:\latest\BookApp-master\BookEntity\bin\Release\BookEntity.dll.config
+F:\latest\BookApp-master\BookEntity\bin\Release\BookEntity.dll
+F:\latest\BookApp-master\BookEntity\bin\Release\BookEntity.pdb
+F:\latest\BookApp-master\BookEntity\bin\Release\EntityFramework.dll
+F:\latest\BookApp-master\BookEntity\bin\Release\EntityFramework.SqlServer.dll
+F:\latest\BookApp-master\BookEntity\bin\Release\EntityFramework.xml
+F:\latest\BookApp-master\BookEntity\bin\Release\EntityFramework.SqlServer.xml
+F:\latest\BookApp-master\BookEntity\obj\Release\BookEntity.dll
+F:\latest\BookApp-master\BookEntity\obj\Release\BookEntity.pdb
+F:\latest\BookApp-master\BookEntity\obj\Release\BookEntity.csprojResolveAssemblyReference.cache

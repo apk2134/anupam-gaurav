@@ -1,0 +1,211 @@
+﻿@model BookRent.Models.SearchViewModel
+
+@*@model BookRent.Models.BookViewModel*@
+
+
+
+@using BookRentBL
+@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+    SubscriptionManager smanager = new SubscriptionManager();
+    CategoryManager cmanager = new CategoryManager();
+    BookManager bmanager = new BookManager();
+
+        }
+
+
+
+
+<!-- Start Main Content Holder -->
+<section id="content-holder" class="container-fluid container">
+    <link href="~/css/SubscriptionStyle.css" rel="stylesheet" />
+    <link href="~/css/BookSearchResult.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <section class="row-fluid">
+        <div class="heading-bar">
+            @*<div id="Subscription" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="control-group">
+                    @Html.LabelFor(model => model.SubscriptionId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-5 col-xs-10 col-sm-10">
+                        @Html.DropDownListFor(model => model.SubscriptionId, new SelectList(smanager.GetAllSubscription(), "SubscriptionId", "SubscriptionType"), new { htmlAttributes = new { @class = ".controls" } })
+                        @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
+                        <p>Duration:</p>
+                        <p>Ammount:</p>
+                        <p> One Time Registratioin Fee:</p>
+                        <p>Refundable Deposit Per Book:</p>
+                        <p>Door To Door Dileviry(OPT):</p>
+                    </div>
+                </div>
+            </div>*@
+
+
+            <div class="container-fluid">
+                <div class="title-arch">Subscriptions</div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3  project wow animated animated4 fadeInLeft">
+                    <div class="project-hover">
+                        <h2>Basic Reader</h2>
+
+                        <hr />
+                        <p>Young Readers Individuals<br />RS.300<br />12 Months<br />Registration Fee 250<br />Refundable Deposit Per Book RS.500<br />Door to Door Delivery RS.100 </p>
+                        <a href="#">BUY</a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3  project project-2 wow animated animated3 fadeInLeft">
+
+                    <div class="project-hover">
+                        <h2>Regular Reader</h2>
+                        <hr />
+                        <p>Regular Reader Book Lover<br />RS.350<br />12 Months<br />Registration Fee 250<br />Refundable Deposit Per Book RS.500<br />Door to Door Delivery RS.100 </p>
+
+                        <a href="#">BUY</a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3  project project-3 wow animated animated2 fadeInLeft">
+                    <div class="project-hover">
+                        <h2>Frequent Reader</h2>
+                        <hr />
+                        <p>Family Book Worms<br />RS.4600<br />12 Months<br />No Registration Fee<br /> No Refundable Deposit Book <br />Door to Door Delivery Free </p>
+                        <a href="#">BUY</a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3  project project-4 wow animated fadeInLeft">
+                    <div class="project-hover">
+                        <h2>Serious Reader</h2>
+                        <hr />
+                        <p>Family Book Worms<br />RS.7000<br />12 Months<br />No Registration Fee<br /> No Refundable Deposit Book <br />Door to Door Delivery Free </p>
+                        <a href="#">BUY</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+
+
+
+
+
+            <span class="h-line"></span>
+        </div>
+        <!-- Start Main Content -->
+        <section class="span12 first">
+      
+            <div class="product_sort">
+                <div class="row-1">
+                    <div class="left">
+                        <span class="s-title">Search by</span>
+                        
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="control-group">
+                                @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="wrapper">
+                                    <div class="col-md-5 col-xs-10 col-sm-10">
+                                        @Html.DropDownListFor(model => model.CategoryId, new SelectList(cmanager.GetAllCategories(), "CategoryId", "CategoryName"), new { htmlAttributes = new { @class = ".controls" } })
+                                        @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+
+                                    </div>
+                            
+                                </div>
+                            </div>
+                                                    @*<select name="">
+                                        <option>Position</option>
+                                        <option>Position 2</option>
+                                        <option>Position 3</option>
+        <img src="~/images/tutoring-books-sylvan-learning.jpg" />
+                                        <option>Position 4</option>
+                                    </select>*@
+                        
+                    </div>
+                    <div class="right">
+                        <span>Show</span>
+                        <span>
+                            <select name="">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </span>
+                        <span>per page</span>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <span class="left">Items 1 to 9 of 15 total</span>
+                    <ul class="product_view">
+                        <li>View as:</li>
+                        <li>
+                            <a class="grid-view" href="grid-view.html">Grid View</a>
+                        </li>
+                        <li>
+                            <a class="list-view" href="list-view.html">List View</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            @*@{ 
+               
+                Model.SearchBook = bmanager.GetAllBooks();
+            }*@
+            
+            <section class="grid-holder features-books">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in Model.SearchBook)
+                        {
+
+
+                            <div class="col-md-3">
+
+                                <div class="thumbnail">
+                                    <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
+                                    <div class="caption">
+
+                                        <h4>@Html.DisplayFor(model => item.BookName)</h4>
+                                        <p> dummy text of the printing and typesetting industry. <br /> when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+
+                                    <div class="space-ten"></div>
+                                    <div class="btn-ground text-center">
+                                        <button type="button" class="btn btn-primary" onclick="addcart(item.BookId)"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                        @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>*@
+                                    </div>
+                                    <div class="space-ten"></div>
+                                </div>
+
+                            </div>
+
+                        }
+                    </div>
+                </div>
+
+
+
+
+
+
+         
+        
+
+                        @*<figure class="span3 slide">
+                        <a href="book-detail.html"><img src="images/image25.jpg" alt="" class="pro-img" /></a>
+                        <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
+                        <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star" /></span>
+                        <div class="cart-price">
+                            <a class="cart-btn2" href="cart.html">Add to Cart</a>
+
+                        </div>
+                    </figure>*@
+            </section>
+        </section>
+    </section>
+</section>
+
+<script>
+    function addcart(value)
+    {
+
+    }
+</script>

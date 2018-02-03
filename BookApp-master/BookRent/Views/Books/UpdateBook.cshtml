@@ -1,0 +1,81 @@
+﻿@model BookRent.Models.BookViewModel
+@using BookRent.Models
+
+@using BookRentBL
+@{
+    ViewBag.Title = "GetBookScreen";
+    //Layout = "_Layout.cshtml";
+
+
+}
+<link href="~/css/bs.css" rel="stylesheet" />
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
+    <div id="AdminScreen" style="display:none;"></div>
+    <div id="tabs">
+
+        <div style="margin:10px -4px 0px -7px;">
+            <div class="ui-tabs-pakknel ui-corner-bottom ui-widget-content" style="height:561px;">
+                <div id="wrapper" style="font-family:tahoma,arial;margin-top:18px;font-size:80%;">
+                    <div id="content" style="width:100%;margin:0px auto;">
+                        <div id="boundary" class="headervisible">
+                            <div class="container" style="width:100%">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <h1>Search</h1>
+                                    </div>
+                                </div>
+                                <div class="row" id="searchDiv">
+                                    <div class="col-md-4 ">
+                                        <form action="" class="search-form">
+                                            <div class="form-group has-feedback">
+                                                <label for="search" class="sr-only">Book Search</label>
+                                                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="glyphicon glyphicon-search form-control-feedback " onclick="getBooks(this)"></span>
+                                    </div>
+                                </div>
+                                <div id="searchBook">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getBooks(value)
+    {
+        var isbn = $("#search").val();
+        debugger;
+        var ISBN = JSON.stringify({ isBn: isbn });
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ISBN,
+            url: '../Books/UpdateBook',
+            success: function (data) {
+                $("#searchBook").html(data);
+            },
+            failure: function () { alert('failure'); },
+            error: function (data) { alert(data.html); alert('error'); }
+        });
+
+    }
+
+</script>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/Admin.js">
+
+</script>

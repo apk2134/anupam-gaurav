@@ -1,0 +1,16 @@
+F:\latest\BookApp-master\BookRentBL\bin\Release\RentBook.mdf
+F:\latest\BookApp-master\BookRentBL\bin\Release\RentBook_log.ldf
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookRentBL.dll.config
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookRentBL.dll
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookRentBL.pdb
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookEntity.dll
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookRentRepository.dll
+F:\latest\BookApp-master\BookRentBL\bin\Release\EntityFramework.dll
+F:\latest\BookApp-master\BookRentBL\bin\Release\EntityFramework.SqlServer.dll
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookEntity.pdb
+F:\latest\BookApp-master\BookRentBL\bin\Release\BookRentRepository.pdb
+F:\latest\BookApp-master\BookRentBL\bin\Release\EntityFramework.xml
+F:\latest\BookApp-master\BookRentBL\bin\Release\EntityFramework.SqlServer.xml
+F:\latest\BookApp-master\BookRentBL\obj\Release\BookRentBL.csprojResolveAssemblyReference.cache
+F:\latest\BookApp-master\BookRentBL\obj\Release\BookRentBL.dll
+F:\latest\BookApp-master\BookRentBL\obj\Release\BookRentBL.pdb

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentBookModelStoreContainer" CdmEntityContainer="RentBookEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="RentBookModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="House" ColumnName="House" />
+          <ScalarProperty Name="Locality" ColumnName="Locality" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="landmark" ColumnName="landmark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="RentBookModel.Author">
+        <MappingFragment StoreEntitySet="Authors">
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillDetails">
+      <EntityTypeMapping TypeName="RentBookModel.BillDetail">
+        <MappingFragment StoreEntitySet="BillDetails">
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+          <ScalarProperty Name="CoustomerId" ColumnName="CoustomerId" />
+          <ScalarProperty Name="SubscriptionId" ColumnName="SubscriptionId" />
+          <ScalarProperty Name="RenualDate" ColumnName="RenualDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="RentBookModel.Book">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="Publisher_" ColumnName="Publisher " />
+          <ScalarProperty Name="Avalability" ColumnName="Avalability" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="RentBookModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoustomerDetails">
+      <EntityTypeMapping TypeName="RentBookModel.CoustomerDetail">
+        <MappingFragment StoreEntitySet="CoustomerDetails">
+          <ScalarProperty Name="CoustomerId" ColumnName="CoustomerId" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="BooksTaken" ColumnName="BooksTaken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoustomerOrders">
+      <EntityTypeMapping TypeName="RentBookModel.CoustomerOrder">
+        <MappingFragment StoreEntitySet="CoustomerOrder">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="CoustomerId" ColumnName="CoustomerId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="RentBookModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="RentBookModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentDetails">
+      <EntityTypeMapping TypeName="RentBookModel.PaymentDetail">
+        <MappingFragment StoreEntitySet="PaymentDetails">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="CoustomerId" ColumnName="CoustomerId" />
+          <ScalarProperty Name="PaymentSatus" ColumnName="PaymentSatus" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscriptions">
+      <EntityTypeMapping TypeName="RentBookModel.Subscription">
+        <MappingFragment StoreEntitySet="Subscriptions">
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="Subscriptiondays" ColumnName="Subscriptiondays" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BookCategory" TypeName="RentBookModel.BookCategory" StoreEntitySet="BookCategory">
+      <EndProperty Name="Books">
+        <ScalarProperty Name="BookId" ColumnName="BookId" />
+      </EndProperty>
+      <EndProperty Name="Category">
+        <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BooksAuthors" TypeName="RentBookModel.BooksAuthors" StoreEntitySet="BooksAuthors">
+      <EndProperty Name="Authors">
+        <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+      </EndProperty>
+      <EndProperty Name="Books">
+        <ScalarProperty Name="BookId" ColumnName="BookId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CoustomerSubscription" TypeName="RentBookModel.CoustomerSubscription" StoreEntitySet="CoustomerSubscription">
+      <EndProperty Name="CoustomerDetails">
+        <ScalarProperty Name="CoustomerId" ColumnName="CoustomerId" />
+      </EndProperty>
+      <EndProperty Name="Subscriptions">
+        <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

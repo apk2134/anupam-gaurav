@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentBookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="House" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Locality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="landmark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CoustomerDetails" Relationship="Self.FK_CoustomerDetails_ToTable" FromRole="Address" ToRole="CoustomerDetails" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="AuthorId" />
+    </Key>
+    <Property Name="AuthorId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="Self.BooksAuthors" FromRole="Authors" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="BillDetail">
+    <Key>
+      <PropertyRef Name="BillId" />
+    </Key>
+    <Property Name="BillId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CoustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubscriptionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RenualDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CoustomerDetail" Relationship="Self.FK_BillDetails_ToTable" FromRole="BillDetails" ToRole="CoustomerDetails" />
+    <NavigationProperty Name="Subscription" Relationship="Self.FK_BillDetails_ToTable_1" FromRole="BillDetails" ToRole="Subscriptions" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Publisher_" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Avalability" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_ToTable" FromRole="Books" ToRole="Orders" />
+    <NavigationProperty Name="Categories" Relationship="Self.BookCategory" FromRole="Books" ToRole="Category" />
+    <NavigationProperty Name="Authors" Relationship="Self.BooksAuthors" FromRole="Books" ToRole="Authors" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="Self.BookCategory" FromRole="Category" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="CoustomerDetail">
+    <Key>
+      <PropertyRef Name="CoustomerId" />
+    </Key>
+    <Property Name="CoustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddressId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BooksTaken" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_CoustomerDetails_ToTable" FromRole="CoustomerDetails" ToRole="Address" />
+    <NavigationProperty Name="BillDetails" Relationship="Self.FK_BillDetails_ToTable" FromRole="CoustomerDetails" ToRole="BillDetails" />
+    <NavigationProperty Name="CoustomerOrders" Relationship="Self.FK_CoustomerOrder_ToTable" FromRole="CoustomerDetails" ToRole="CoustomerOrder" />
+    <NavigationProperty Name="PaymentDetails" Relationship="Self.FK_PaymentDetails_ToTable" FromRole="CoustomerDetails" ToRole="PaymentDetails" />
+    <NavigationProperty Name="Subscriptions" Relationship="Self.CoustomerSubscription" FromRole="CoustomerDetails" ToRole="Subscriptions" />
+  </EntityType>
+  <EntityType Name="CoustomerOrder">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="CoustomerId" />
+    </Key>
+    <Property Name="OrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CoustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CoustomerDetail" Relationship="Self.FK_CoustomerOrder_ToTable" FromRole="CoustomerOrder" ToRole="CoustomerDetails" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="OrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BookId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_Orders_ToTable" FromRole="Orders" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="PaymentDetail">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CoustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentSatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CoustomerDetail" Relationship="Self.FK_PaymentDetails_ToTable" FromRole="PaymentDetails" ToRole="CoustomerDetails" />
+  </EntityType>
+  <EntityType Name="Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Subscriptiondays" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="NoOfDays" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BillDetails" Relationship="Self.FK_BillDetails_ToTable_1" FromRole="Subscriptions" ToRole="BillDetails" />
+    <NavigationProperty Name="CoustomerDetails" Relationship="Self.CoustomerSubscription" FromRole="Subscriptions" ToRole="CoustomerDetails" />
+  </EntityType>
+  <Association Name="FK_CoustomerDetails_ToTable">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="CoustomerDetails" Type="Self.CoustomerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="CoustomerDetails">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillDetails_ToTable">
+    <End Role="CoustomerDetails" Type="Self.CoustomerDetail" Multiplicity="1" />
+    <End Role="BillDetails" Type="Self.BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoustomerDetails">
+        <PropertyRef Name="CoustomerId" />
+      </Principal>
+      <Dependent Role="BillDetails">
+        <PropertyRef Name="CoustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillDetails_ToTable_1">
+    <End Role="Subscriptions" Type="Self.Subscription" Multiplicity="1" />
+    <End Role="BillDetails" Type="Self.BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscriptions">
+        <PropertyRef Name="SubscriptionID" />
+      </Principal>
+      <Dependent Role="BillDetails">
+        <PropertyRef Name="SubscriptionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_ToTable">
+    <End Role="Books" Type="Self.Book" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CoustomerOrder_ToTable">
+    <End Role="CoustomerDetails" Type="Self.CoustomerDetail" Multiplicity="1" />
+    <End Role="CoustomerOrder" Type="Self.CoustomerOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoustomerDetails">
+        <PropertyRef Name="CoustomerId" />
+      </Principal>
+      <Dependent Role="CoustomerOrder">
+        <PropertyRef Name="CoustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentDetails_ToTable">
+    <End Role="CoustomerDetails" Type="Self.CoustomerDetail" Multiplicity="1" />
+    <End Role="PaymentDetails" Type="Self.PaymentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoustomerDetails">
+        <PropertyRef Name="CoustomerId" />
+      </Principal>
+      <Dependent Role="PaymentDetails">
+        <PropertyRef Name="CoustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BookCategory">
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+  </Association>
+  <Association Name="BooksAuthors">
+    <End Role="Authors" Type="Self.Author" Multiplicity="*" />
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+  </Association>
+  <Association Name="CoustomerSubscription">
+    <End Role="CoustomerDetails" Type="Self.CoustomerDetail" Multiplicity="*" />
+    <End Role="Subscriptions" Type="Self.Subscription" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="RentBookEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="BillDetails" EntityType="Self.BillDetail" />
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="CoustomerDetails" EntityType="Self.CoustomerDetail" />
+    <EntitySet Name="CoustomerOrders" EntityType="Self.CoustomerOrder" />
+    <EntitySet Name="Logins" EntityType="Self.Login" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetail" />
+    <EntitySet Name="Subscriptions" EntityType="Self.Subscription" />
+    <AssociationSet Name="FK_CoustomerDetails_ToTable" Association="Self.FK_CoustomerDetails_ToTable">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="CoustomerDetails" EntitySet="CoustomerDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillDetails_ToTable" Association="Self.FK_BillDetails_ToTable">
+      <End Role="CoustomerDetails" EntitySet="CoustomerDetails" />
+      <End Role="BillDetails" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillDetails_ToTable_1" Association="Self.FK_BillDetails_ToTable_1">
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+      <End Role="BillDetails" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_ToTable" Association="Self.FK_Orders_ToTable">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CoustomerOrder_ToTable" Association="Self.FK_CoustomerOrder_ToTable">
+      <End Role="CoustomerDetails" EntitySet="CoustomerDetails" />
+      <End Role="CoustomerOrder" EntitySet="CoustomerOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentDetails_ToTable" Association="Self.FK_PaymentDetails_ToTable">
+      <End Role="CoustomerDetails" EntitySet="CoustomerDetails" />
+      <End Role="PaymentDetails" EntitySet="PaymentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="BookCategory" Association="Self.BookCategory">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="BooksAuthors" Association="Self.BooksAuthors">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="CoustomerSubscription" Association="Self.CoustomerSubscription">
+      <End Role="CoustomerDetails" EntitySet="CoustomerDetails" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
