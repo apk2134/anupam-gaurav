@@ -34,3 +34,15 @@ F:\latest\BookApp-master\BookEntity\bin\Debug\EntityFramework.SqlServer.xml
 F:\latest\BookApp-master\BookEntity\obj\Debug\BookEntity.dll
 F:\latest\BookApp-master\BookEntity\obj\Debug\BookEntity.pdb
 F:\latest\BookApp-master\BookEntity\obj\Debug\BookEntity.csprojResolveAssemblyReference.cache
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\RentBook.mdf
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\RentBook_log.ldf
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\BookEntity.dll.config
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\BookEntity.dll
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\BookEntity.pdb
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\EntityFramework.dll
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\EntityFramework.SqlServer.dll
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\EntityFramework.xml
+F:\GIT\AG\BookApp-master\BookEntity\bin\Debug\EntityFramework.SqlServer.xml
+F:\GIT\AG\BookApp-master\BookEntity\obj\Debug\BookEntity.csprojResolveAssemblyReference.cache
+F:\GIT\AG\BookApp-master\BookEntity\obj\Debug\BookEntity.dll
+F:\GIT\AG\BookApp-master\BookEntity\obj\Debug\BookEntity.pdb

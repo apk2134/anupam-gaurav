@@ -40,3 +40,17 @@ F:\latest\BookApp-master\BookRentRepository\bin\Debug\EntityFramework.SqlServer.
 F:\latest\BookApp-master\BookRentRepository\obj\Debug\BookRentRepository.csprojResolveAssemblyReference.cache
 F:\latest\BookApp-master\BookRentRepository\obj\Debug\BookRentRepository.dll
 F:\latest\BookApp-master\BookRentRepository\obj\Debug\BookRentRepository.pdb
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\RentBook.mdf
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\RentBook_log.ldf
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\BookRentRepository.dll.config
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\BookRentRepository.dll
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\BookRentRepository.pdb
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\BookEntity.dll
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\EntityFramework.dll
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\EntityFramework.SqlServer.dll
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\BookEntity.pdb
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\EntityFramework.xml
+F:\GIT\AG\BookApp-master\BookRentRepository\bin\Debug\EntityFramework.SqlServer.xml
+F:\GIT\AG\BookApp-master\BookRentRepository\obj\Debug\BookRentRepository.csprojResolveAssemblyReference.cache
+F:\GIT\AG\BookApp-master\BookRentRepository\obj\Debug\BookRentRepository.dll
+F:\GIT\AG\BookApp-master\BookRentRepository\obj\Debug\BookRentRepository.pdb
