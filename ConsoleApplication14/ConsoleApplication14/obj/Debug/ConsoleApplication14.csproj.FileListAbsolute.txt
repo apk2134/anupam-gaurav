@@ -1,0 +1,6 @@
+c:\users\gaurav\documents\visual studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\bin\Debug\ConsoleApplication14.exe.config
+C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\bin\Debug\ConsoleApplication14.exe
+C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\bin\Debug\ConsoleApplication14.pdb
+C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.csprojResolveAssemblyReference.cache
+C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.exe
+C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.pdb
