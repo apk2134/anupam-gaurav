@@ -4,3 +4,6 @@ C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\Conso
 C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.csprojResolveAssemblyReference.cache
 C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.exe
 C:\Users\gaurav\Documents\Visual Studio 2013\Projects\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.pdb
+F:\GIT\AG\ConsoleApplication14\ConsoleApplication14\bin\Debug\ConsoleApplication14.exe.config
+F:\GIT\AG\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.exe
+F:\GIT\AG\ConsoleApplication14\ConsoleApplication14\obj\Debug\ConsoleApplication14.pdb

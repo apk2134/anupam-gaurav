@@ -19,7 +19,7 @@ namespace ConsoleApplication14
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("chutiya");
             
             List<HoldContenstAndMark> list = new List<HoldContenstAndMark>();
 
