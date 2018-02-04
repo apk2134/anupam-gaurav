@@ -29,7 +29,20 @@ function getcoustomersubscription() {
     });
 
 }
+function getcoustomerorder()
+{
+    debugger;
+    $.ajax({
+        type: 'Get',
+        url: "../CoustomerOrders/Index",
+        success: function (data) {
 
+            $("#AdminConfig").html(data);
+        },
+        failure: function () { alert('failure'); },
+        error: function (data) { alert('error'); }
+    });
+}
 
 function getuserpage() {
     

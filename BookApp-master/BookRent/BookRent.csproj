@@ -354,8 +354,10 @@
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CoustomerDetailsController.cs" />
+    <Compile Include="Controllers\CoustomerOrdersController.cs" />
     <Compile Include="Controllers\CoustomerSubscriptionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -395,6 +397,16 @@
     <Content Include="Views\CoustomerSubscriptions\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Books\SearchResult.cshtml" />
+    <Content Include="Views\CoustomerOrders\Create.cshtml" />
+    <Content Include="Views\CoustomerOrders\Delete.cshtml" />
+    <Content Include="Views\CoustomerOrders\Details.cshtml" />
+    <Content Include="Views\CoustomerOrders\Edit.cshtml" />
+    <Content Include="Views\CoustomerOrders\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
