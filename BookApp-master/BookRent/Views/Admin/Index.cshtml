@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = ViewBag.Username;
     Layout = "~/Views/Shared/_BaseLayout.cshtml";
 }
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bhoechie-tab-menu">
                 <div class="list-group">
                     <a href="#" class="list-group-item active text-center" onclick="getBookMenu()">
-                        <h2 class="glyphicon glyphicon-book"></h2><br />Books
+                        <h2 class="glyphicon glyphicon-book">Username-@ViewBag.Username</h2><br />Books
                     </a>
                     <a href="#" class="list-group-item text-center" onclick="getuserpage()">
                         <h2 class="glyphicon glyphicon-user"></h2><br />Users
@@ -24,6 +24,10 @@
                     <a href="#" class="list-group-item text-center" onclick="Js_BuildingConfigruation()">
                         <h2 class="glyphicon glyphicon-shopping-cart"></h2><br />Orders
                     </a>
+                    <a href="#" class="list-group-item text-center" onclick="Js_BuildingConfigruation()">
+                    
+                    </a>
+
 
                 </div>
             </div>
