@@ -55,5 +55,37 @@ namespace BookRent.Controllers
         {
             return View();
         }
+
+        public int AddBooktoCart(string str)
+        {
+            int added = 0;
+
+            var bookList = TempData.Peek("bookData") as List<string>;
+
+            if (bookList == null)
+            {
+                bookList = new List<string>();
+                bookList = (bookList as List<string>);
+                bookList.Add(str);
+                TempData["bookData"] = bookList;
+            }
+            else
+            {
+
+                if (bookList.Contains(str))
+                {
+                    added = 1;
+                    bookList.Remove(str);
+                }
+                else
+                {
+                    bookList.Add(str);
+                }
+                TempData["bookData"] = bookList;
+            }
+
+            return added;
+          
+        }
     }
 }

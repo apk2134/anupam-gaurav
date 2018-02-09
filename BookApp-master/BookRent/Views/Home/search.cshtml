@@ -3,7 +3,7 @@
 @*@model BookRent.Models.BookViewModel*@
 
 
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 @using BookRentBL
 @{
     ViewBag.Title = "search";
@@ -175,7 +175,7 @@
 
                                     <div class="space-ten"></div>
                                     <div class="btn-ground text-center">
-                                        <button type="button" class="btn btn-primary" onclick="addcart(item.BookId)"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                                        <button id=@item.BookId type="button" class="btn btn-primary" onclick="addcart('@item.BookId')"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
                                         @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>*@
                                     </div>
                                     <div class="space-ten"></div>
@@ -212,6 +212,51 @@
 <script>
     function addcart(value)
     {
+        
 
+        //if(sessionStorage.getItem('cartBook')==null)
+        //{
+        //    var books = [value];
+        //    sessionStorage.setItem('cartBook',books);
+        //}
+        //else
+        //{
+        //    var books = sessionStorage.getItem('cartBook');
+        //    sessionStorage.removeItem('cartBook');
+        //    books.concat(value);
+        //    sessionStorage.setItem('cartBook',books);
+
+        //}
+        
+        $.ajax
+             (
+             {
+                 type: 'Post',
+                 url: '@Url.Action("AddBooktoCart")',
+                 dataType: "text",
+                 data: { str:value },
+                 sucess: function (data)
+                 {
+                     if (data == "0")
+                     {
+                         $('#' + value + '').text("Remove From Cart");
+
+                     }
+                     else
+                     {
+                         $('#' + value + '').text("Add to Cart");
+
+                     }
+
+                 },
+                 error:
+                     function (error)
+                     {
+                         $('#' + value + '').text("Remove From Cart");
+
+
+                     }
+             }
+             )
     }
 </script>
