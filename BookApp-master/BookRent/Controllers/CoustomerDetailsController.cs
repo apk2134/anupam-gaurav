@@ -10,6 +10,8 @@ using BookEntity;
 
 namespace BookRent.Controllers
 {
+    [AuthorizationFilter.AuthorizationFilter]
+
     public class CoustomerDetailsController : Controller
     {
         private Entity db = new Entity();

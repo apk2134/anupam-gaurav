@@ -13,6 +13,8 @@ using System.IO;
 
 namespace BookRent.Controllers
 {
+    [AuthorizationFilter.AuthorizationFilter]
+
     public class BooksController : Controller
     {
         public ActionResult GetBookScreen()

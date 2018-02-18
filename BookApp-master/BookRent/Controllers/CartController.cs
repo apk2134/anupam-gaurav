@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace BookRent.Controllers
 {
+    [AuthorizationFilter.AuthorizationFilter]
+
     public class CartController : Controller
     {
         // GET: Cart

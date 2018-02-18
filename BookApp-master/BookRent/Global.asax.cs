@@ -13,6 +13,7 @@ namespace BookRent
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BookRent.AuthorizationFilter;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -27,7 +28,7 @@ namespace BookRent.Controllers
                     list.Add(ViewBag.Username);
                     ViewBag.Username = getData["name"];
                     list.Add(ViewBag.Username);
-
+                    TempData["UserName"] = getData["name"];
                 }
 
                 else

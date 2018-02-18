@@ -9,6 +9,8 @@ using BookRent.Models;
 
 namespace BookRent.Controllers
 {
+    [AuthorizationFilter.AuthorizationFilter]
+
     public class HomeController : Controller
     {
         // GET: Home
